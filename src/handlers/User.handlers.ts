@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import Users from "../models/Users.models";
 
-export const getAllUsers = async (req: Request, res: Response) => {
+export const getAllUsers = async (req: Request, res: Response): Promise<any> => {
     try {
         const allUsers = await Users.findAll();
         return res.status(200).json({ data: allUsers });
